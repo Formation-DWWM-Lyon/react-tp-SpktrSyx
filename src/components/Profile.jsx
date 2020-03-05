@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, ListGroup, Image, } from 'react-bootstrap';
 
-const User = ({ gender, country, email, city, age, login, picture, registered }) =>
+const Profile = ({ gender, country, email, city, age, login, picture, registered }) =>
 <Card>
   <Card.Header as="h3">USERNAME {login.username}</Card.Header>
     <Card.Body>
@@ -24,4 +24,4 @@ const User = ({ gender, country, email, city, age, login, picture, registered })
   </Card.Footer>
 </Card>
 
-export default User;
+export default Profile;

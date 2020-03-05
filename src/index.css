@@ -2,6 +2,7 @@
 
 body {
   margin: 0;
+  background-color: #EEEEEE;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -15,5 +16,11 @@ code {
 }
 
 .title {
+  font-family: 'IBM Plex Mono', monospace, Arial, Helvetica;
+}
+
+.card-header {
+  background-color:#585858;
+  color: white;
   font-family: 'IBM Plex Mono', monospace, Arial, Helvetica;
 }

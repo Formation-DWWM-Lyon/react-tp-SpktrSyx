@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
-import User from '../components/User';
 import Loader from 'react-loader-spinner';
-import { ListGroup, ListGroupItem, Image, Card, Button, Row } from 'react-bootstrap';
+import { ListGroup, Image, Card, Button, Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
+import Profile from '../components/Profile';
 
 export default class DataContainer extends Component {
   state = {
@@ -38,11 +38,11 @@ export default class DataContainer extends Component {
         return (
           <Row variant="flush" className="">
             {data.results.map( (item, index) =>
-    <Col sm>
+    <Col sm className="mb5d-flex mb-5">
     <Card className="text-center">
-      <Card.Header as="h3">{item.login.username}</Card.Header>
+      <Card.Header className="card-header" as="h3">{item.login.username}</Card.Header>
       <Card.Body><Image src={item.picture.large} roundedCircle/></Card.Body>
-      <ListGroup variant="flush">
+      <ListGroup className="text-left" variant="flush">
         <ListGroup.Item>Age : {item.dob.age}</ListGroup.Item>
         <ListGroup.Item>Gender : {item.gender}</ListGroup.Item>
         <ListGroup.Item>Country : {item.location.country}</ListGroup.Item>
@@ -50,7 +50,7 @@ export default class DataContainer extends Component {
       </ListGroup> 
       <Card.Footer>
         {/* <ListGroup.Item>Email : {item.email}</ListGroup.Item> */}
-        <Button variant="primary">See profile</Button>
+        <Button variant="danger">See profile</Button>
       </Card.Footer> 
     </Card>
     </Col>
@@ -59,6 +59,6 @@ export default class DataContainer extends Component {
         );
       }
     
-    return <User {...data}/>;
+    return <Profile {...data}/>;
   }
 }

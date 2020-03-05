@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import User from '../components/User';
 import Loader from 'react-loader-spinner';
-import { ListGroup, ListGroupItem } from 'react-bootstrap';
+import { ListGroup, ListGroupItem, Image, Card, Button } from 'react-bootstrap';
 
 export default class DataContainer extends Component {
   state = {
@@ -17,7 +17,7 @@ export default class DataContainer extends Component {
   }
   
   render = () => {
-    const { data, } = this.state;
+    const { data } = this.state;
     
     if (!data) {
       return (
@@ -35,14 +35,27 @@ export default class DataContainer extends Component {
     console.log(data.results);
     if (data.results) {
         return (
-          <ListGroup>
+          <ListGroup variant="flush">
             {data.results.map( (item, index) =>
-              <ListGroup.Item>{item.name.first} {item.name.last}</ListGroup.Item>
-            )}
+    <Card className="text-center">
+      <Card.Header as="h3">{item.login.username}</Card.Header>
+      <Card.Body><Image src={item.picture.large} roundedCircle/></Card.Body>
+      <ListGroup variant="flush">
+        <ListGroup.Item>Age : {item.dob.age}</ListGroup.Item>
+        <ListGroup.Item>Gender : {item.gender}</ListGroup.Item>
+        <ListGroup.Item>Country : {item.location.country}</ListGroup.Item>
+        <ListGroup.Item>City : {item.location.city}</ListGroup.Item>
+        <Button variant="primary">See profile</Button>
+      </ListGroup> 
+      <Card.Footer>
+        <ListGroup.Item>Email : {item.email}</ListGroup.Item>
+      </Card.Footer>
+    </Card>
+    )}
           </ListGroup>
         );
       }
     
-    // return <User {...data}/>;
+    return <User {...data}/>;
   }
 }

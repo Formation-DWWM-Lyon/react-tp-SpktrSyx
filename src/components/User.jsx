@@ -1,16 +1,16 @@
 import React from 'react';
-import { Card, ListGroup, } from 'react-bootstrap';
+import { Card, ListGroup, Image, } from 'react-bootstrap';
 
-const User = ({ username, gender, country, email, city, age, login, picture, registered }) =>
+const User = ({ gender, country, email, city, age, login, picture, registered }) =>
 <Card>
-  <Card.Header as="h3">USERNAME {login}</Card.Header>
+  <Card.Header as="h3">USERNAME {login.username}</Card.Header>
     <Card.Body>
       <Card.Subtitle>Profile</Card.Subtitle>
     </Card.Body>
   <ListGroup variant="flush">
-    <ListGroup.Item>PHOTO {picture}</ListGroup.Item>
+    <Image src={picture.large} roundedCircle/>
     {/* A FAIRE */}
-    <ListGroup.Item>Age : {age }</ListGroup.Item>
+    <ListGroup.Item>Age : {age}</ListGroup.Item>
     <ListGroup.Item>Gender : {gender}</ListGroup.Item>
     <ListGroup.Item>Country : {country}</ListGroup.Item>
     <ListGroup.Item>City : {city}</ListGroup.Item>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, ListGroup, } from 'react-bootstrap';
 
-const User = ({ username, gender, country, city, age, login, picture, registered }) =>
+const User = ({ username, gender, country, email, city, age, login, picture, registered }) =>
 <Card>
   <Card.Header as="h3">USERNAME {login}</Card.Header>
     <Card.Body>
@@ -14,6 +14,7 @@ const User = ({ username, gender, country, city, age, login, picture, registered
     <ListGroup.Item>Gender : {gender}</ListGroup.Item>
     <ListGroup.Item>Country : {country}</ListGroup.Item>
     <ListGroup.Item>City : {city}</ListGroup.Item>
+    <ListGroup.Item>Email : {email}</ListGroup.Item>
    </ListGroup> 
   <Card.Footer>
     <small className="text-muted">

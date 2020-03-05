@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import User from '../components/User';
 import Loader from 'react-loader-spinner';
+import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 export default class DataContainer extends Component {
   state = {
@@ -16,7 +17,7 @@ export default class DataContainer extends Component {
   }
   
   render = () => {
-    const { data } = this.state;
+    const { data, } = this.state;
     
     if (!data) {
       return (
@@ -26,14 +27,22 @@ export default class DataContainer extends Component {
               color="#FFCF39"
               height={100}
               width={100}
-              // timeout={3000} //3 secs
             />
           </div>
         );;
     }
     
-    
     console.log(data.results);
-    return <User {...data.results}/>;
+    if (data.results) {
+        return (
+          <ListGroup>
+            {data.results.map( (item, index) =>
+              <ListGroup.Item>{item.name.first} {item.name.last}</ListGroup.Item>
+            )}
+          </ListGroup>
+        );
+      }
+    
+    // return <User {...data}/>;
   }
 }

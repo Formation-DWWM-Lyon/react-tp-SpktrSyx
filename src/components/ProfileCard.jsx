@@ -3,12 +3,12 @@ import { Container, Col, Card, Image, ListGroup, Button } from 'react-bootstrap'
 import { Row } from 'react-bootstrap';
 
 
-const PeopleList = ({ people, fetchData }) =>
+const ProfileCard = ({ people, fetchData }) =>
   <Container>
     <Row className="justify-content-center">
       <Button className="refresh-button" variant="dark"
         onClick={fetchData}>
-      Refresh
+        Refresh
       </Button>
     </Row>
     <Row variant="flush" className="">
@@ -19,25 +19,16 @@ const PeopleList = ({ people, fetchData }) =>
             <Card.Body>
               <Image src={person.picture.large} className="shadow-sm rounded picture-card" roundedCircle />
             </Card.Body>
-            <ListGroup className="text-left card-infos" variant="flush">
+            <ListGroup className="text-left card-infos">
               <ListGroup.Item>Age : {person.dob.age}</ListGroup.Item>
               <ListGroup.Item>Gender : {person.gender}</ListGroup.Item>
               <ListGroup.Item>Country : {person.location.country}</ListGroup.Item>
               <ListGroup.Item>City : {person.location.city}</ListGroup.Item>
             </ListGroup>
             <Card.Footer>
-              {/* <ListGroup.Item>Email : {item.email}</ListGroup.Item> */}
               <Button variant="danger">
                 See profile
                   </Button>
-
-              {/* <Link to={`/${index}`}>
-          <Button variant="primary">
-            Back to list
-          </Button>
-        </Link>
-        <Profile {...data} /> */}
-
             </Card.Footer>
           </Card>
         </Col>
@@ -54,4 +45,4 @@ const PeopleList = ({ people, fetchData }) =>
     </Row>
   </Container>;
 
-export default PeopleList;
+export default ProfileCard;

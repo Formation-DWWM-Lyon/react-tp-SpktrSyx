@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import Loader from 'react-loader-spinner';
-import PeopleList from '../components/PeopleList';
+import ProfileCard from '../components/ProfileCard';
 
 export default class DataContainer extends Component {
   state = {
@@ -42,7 +42,7 @@ export default class DataContainer extends Component {
     
     if (data.results) {
       return (
-        <PeopleList
+        <ProfileCard
         people={data.results}
         fetchData={this.fetchData}
       />

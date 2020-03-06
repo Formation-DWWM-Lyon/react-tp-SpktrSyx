@@ -1,4 +1,4 @@
-## SheetCheat Git
+## CheatSheet Git
 
 * Pour voir une branche particulière
 ```
@@ -58,6 +58,8 @@ to use
 ---
 
 ## CSS bootstrap 
+
+https://htmlcheatsheet.com/
 
 ### [Grid](https://react-bootstrap.github.io/layout/grid/)
 ```

@@ -1,3 +1,14 @@
+# TO DO
+
+- banner responsive
+- icones à la place des titres
+- revoir page profile
+- add router
+- espace commentaire date.ToLocalString('fr-FR') ?
+
+
+
+
 ## CheatSheet Git
 
 * Pour voir une branche particulière
@@ -32,6 +43,10 @@ git merge down nomdelabranche
 ```
 git branch -d nomdelabranche
 ```
+
+Ne jamais coder sur master ou staging
+Une fonctionnalité = une branche
+Faire des pull request
 <br/>
 
 ---
@@ -94,16 +109,17 @@ Used here :
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 ```
+
+### [STYLED COMPONENT](https://styled-components.com/)
+
+Possibilité de créer des balises avec leur propre style integré dans un fichier javascript et donc des thèmes complets
+<br/>prend en compte les props
+
+[BEM 101](https://css-tricks.com/bem-101/)
+[Article](https://www.alsacreations.com/article/lire/1641-Bonnes-pratiques-en-CSS--BEM-et-OOCSS.html) 
+
 ---
 4. Ajouter page profil
-
-
-#TO DO
-- banner responsive
-- pagination
-- page profile
-- icones à la place des titres
-
 
 ---
 
@@ -115,7 +131,8 @@ PAAS
 
 jamstack
 
+Possibilité d'utiliser wordpress en mode API pour profiter de la base de données
 --- 
-
+/!\ LOOP ERROR 503
 JAMAIS de setState() dans render()
 setState() déclenche un render()

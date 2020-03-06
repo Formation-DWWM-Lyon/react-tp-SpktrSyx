@@ -6,18 +6,18 @@ import { Row } from 'react-bootstrap';
 const PeopleList = ({ people, fetchData }) =>
   <Container>
     <Row className="justify-content-center">
-      <Button className="nav-button" variant="dark"
+      <Button className="refresh-button" variant="dark"
         onClick={fetchData}>
-        Actualiser
+      Refresh
       </Button>
     </Row>
     <Row variant="flush" className="">
       {people.map((person, index) =>
-        <Col sm className="mb5d-flex mb-5">
-          <Card key={index} className="text-center shadow rounded">
-            <Card.Header className="card-header" as="h3">{person.login.username}</Card.Header>
+        <Col sm className="mb5d-flex mb-5 identity">
+          <Card key={index} className="text-center rounded identity-card card-1">
+            <Card.Header className="card-header" as="h4">{person.login.username}</Card.Header>
             <Card.Body>
-              <Image src={person.picture.large} className="text-center shadow-sm rounded" roundedCircle />
+              <Image src={person.picture.large} className="shadow-sm rounded picture-card" roundedCircle />
             </Card.Body>
             <ListGroup className="text-left card-infos" variant="flush">
               <ListGroup.Item>Age : {person.dob.age}</ListGroup.Item>

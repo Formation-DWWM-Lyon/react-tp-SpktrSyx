@@ -9,10 +9,18 @@ git checkout nomDeLaBranche
 ```
 git checkout -b nomDeLaNouvelleBranche
 ```
+
+* Pour commit tout ou certains fichiers
 ```
 git add . ou nomdufichier.json autrefichier.jsx
 git commit -m "decrire le commit"
 ```
+
+* Pour changer de branche
+```
+git checkout nomdelabranche
+```
+
 
 * Pour fusionner avec master
 ```
@@ -94,3 +102,20 @@ Used here :
 - banner responsive
 - pagination
 - page profile
+- icones à la place des titres
+
+
+---
+
+MISE EN LIGNE
+PAAS
+## [Netlify](https://app.netlify.com)
+## [Heroku](https://www.heroku.com/)
+## DATO CMS
+
+jamstack
+
+--- 
+
+JAMAIS de setState() dans render()
+setState() déclenche un render()

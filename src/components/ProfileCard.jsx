@@ -1,13 +1,13 @@
 import React from 'react';
-import { Container, Col, Card, Image, ListGroup, Button } from 'react-bootstrap';
+import { Container, Col, Card, Image, ListGroup, Button, Pagination } from 'react-bootstrap';
 import { Row } from 'react-bootstrap';
 
 
-const ProfileCard = ({ people, fetchData }) =>
+const ProfileCard = ({ people, methods, page }) =>
   <Container>
     <Row className="justify-content-center">
       <Button className="refresh-button" variant="dark"
-        onClick={fetchData}>
+        onClick={methods.fetchData}>
         Refresh
       </Button>
     </Row>
@@ -19,7 +19,7 @@ const ProfileCard = ({ people, fetchData }) =>
             <Card.Body>
               <Image src={person.picture.large} className="shadow-sm rounded picture-card" roundedCircle />
             </Card.Body>
-            <ListGroup className="text-left card-infos">
+            <ListGroup className="text-left card-infos" variant="flush">
               <ListGroup.Item>Age : {person.dob.age}</ListGroup.Item>
               <ListGroup.Item>Gender : {person.gender}</ListGroup.Item>
               <ListGroup.Item>Country : {person.location.country}</ListGroup.Item>
@@ -34,15 +34,14 @@ const ProfileCard = ({ people, fetchData }) =>
         </Col>
       )}
     </Row>
-    {/* <p className="justify-content-center align-items-center">{data.info.page}</p> */}
-    <Row className="justify-content-center">
-      {/* <Button className="nav-button" variant="dark" 
-      onClick={(e) => this.fetchData(people.info.page - 1)}>Prev</Button>
+    <Pagination className="justify-content-center">
+      <Pagination.Prev className="nav-button next-prev" variant="dark" 
+      onClick={methods.prevPage} disabled={page === 1}></Pagination.Prev>
       <Button className="nav-button" variant="danger" 
       onClick={(e) => this.fetchData(1)}>Home</Button>
-      <Button className="nav-button" variant="dark" 
-      onClick={(e) => this.fetchData(people.info.page + 1)}>Next</Button> */}
-    </Row>
+      <Pagination.Next className="nav-button next-prev" variant="dark" 
+      onClick={methods.nextPage}></Pagination.Next>
+    </Pagination>
   </Container>;
 
 export default ProfileCard;

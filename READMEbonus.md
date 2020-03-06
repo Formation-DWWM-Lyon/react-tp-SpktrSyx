@@ -1,9 +1,9 @@
-Pour voir une branche particulière
+* Pour voir une branche particulière
 ```
 git checkout nomDeLaBranche
 ```
 
-Creer une branche à partir de la où on est :
+* Creer une branche à partir de la où on est :
 ```
 git checkout -b nomDeLaNouvelleBranche
 ```
@@ -12,6 +12,16 @@ git add . ou nomdufichier.json autrefichier.jsx
 git commit -m "decrire le commit"
 ```
 
+* Pour fusionner avec master
+```
+git merge down nomdelabranche
+```
+
+
+* Pour supprimer une branche
+```
+git branch -d nomdelabranche
+```
 ---
 
 1. Creation containers->DataContainer.jsx
@@ -24,3 +34,11 @@ Ajout DataContainer dans App.js
 ---
 
 2. Déplacer la liste de personnes dans un container 
+
+
+Add FontAwesome
+```
+yarn add @fortawesome/fontawesome-svg-core
+yarn add @fortawesome/free-solid-svg-icons
+yarn add @fortawesome/react-fontawesome
+```

@@ -5,6 +5,12 @@ import { Row } from 'react-bootstrap';
 
 const PeopleList = ({ people, fetchData }) =>
   <Container>
+    <Row className="justify-content-center">
+      <Button className="nav-button" variant="dark"
+        onClick={fetchData}>
+        Actualiser
+      </Button>
+    </Row>
     <Row variant="flush" className="">
       {people.map((person, index) =>
         <Col sm className="mb5d-flex mb-5">
@@ -45,10 +51,6 @@ const PeopleList = ({ people, fetchData }) =>
       onClick={(e) => this.fetchData(1)}>Home</Button>
       <Button className="nav-button" variant="dark" 
       onClick={(e) => this.fetchData(people.info.page + 1)}>Next</Button> */}
-      <Button className="nav-button" variant="dark" 
-      onClick={fetchData}>
-      Actualiser
-    </Button>
     </Row>
   </Container>;
 

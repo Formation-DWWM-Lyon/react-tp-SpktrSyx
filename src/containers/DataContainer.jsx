@@ -8,19 +8,19 @@ export default class DataContainer extends Component {
     data: null
   }
 
+  componentDidMount = () => {
+    this.fetchData();
+  }
+
   fetchData = (page) => {
+    this.setState({ data: null });
     const now = new Date();
     const seed = now.getMinutes();
     let url = `https://randomuser.me/api/?page=${page}&results=10&seed=${seed}&nat=fr`;
-    this.setState({ data: null });
-    
+
     Axios.get(url)
       .then(response => this.setState({ data: response.data }))
       .catch(error => console.error(error));
-  }
-
-  componentDidMount = () => {
-    this.fetchData();
   }
 
   render = () => {
@@ -42,7 +42,10 @@ export default class DataContainer extends Component {
     
     if (data.results) {
       return (
-        <PeopleList people={data.results} />
+        <PeopleList
+        people={data.results}
+        fetchData={this.fetchData}
+      />
       );
     }
   }

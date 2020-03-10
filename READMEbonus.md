@@ -1,3 +1,7 @@
+# [SEE WORK ON NETLIFY](https://adoring-minsky-2fd7e1.netlify.com/)
+
+---
+
 ## CheatSheet Git
 
 * Pour voir une branche particulière
@@ -111,9 +115,9 @@ MISE EN LIGNE
 PAAS
 ## [Netlify](https://app.netlify.com)
 ## [Heroku](https://www.heroku.com/)
-## DATO CMS
+## [DATO CMS](https://www.datocms.com/)
 
-jamstack
+[jamstack](https://jamstack.org/)
 
 --- 
 
